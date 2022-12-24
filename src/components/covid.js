@@ -1,0 +1,117 @@
+import React, { useEffect, useState } from "react";
+import Card from "react-bootstrap/Card";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+const Covid = () => {
+  const getCovidData = async () => {
+    try {
+      const res = await fetch("https://data.covid19india.org/data.json");
+      const realData = await res.json();
+      console.log(realData.statewise[0]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    // getCovidData()
+  }, []);
+
+  return (
+    <>
+     <Container>
+       <Row>
+       <Col md="2"></Col>
+       <Col md="8"> <h1>🔴 LIVE</h1>
+             <h2>COVID-19 CORONAVIRUS TRACKER</h2>
+        </Col>
+       <Col md="2"></Col>
+       </Row>
+       
+      <Row>
+        <Col md="2"></Col>
+        <Col md="3">
+          <Card border="primary" style={{ width: "18rem" }}>
+            <Card.Header>Our County</Card.Header>
+            <Card.Body>
+              <Card.Title>Pakistan</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md="3">
+          <Card border="primary" style={{ width: "18rem" }}>
+            <Card.Header>Total Recovered </Card.Header>
+            <Card.Body>
+              <Card.Title>Pakistan</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md="3">
+          <Card border="primary" style={{ width: "18rem" }}>
+            <Card.Header>Our County</Card.Header>
+            <Card.Body>
+              <Card.Title>Pakistan</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md="2"></Col>
+      </Row>
+
+      <Row className="mt-4">
+        <Col md="2"></Col>
+        <Col md="3">
+          <Card border="primary" style={{ width: "18rem" }}>
+            <Card.Header>Our County</Card.Header>
+            <Card.Body>
+              <Card.Title>Pakistan</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md="3">
+          <Card border="primary" style={{ width: "18rem" }}>
+            <Card.Header>Our County</Card.Header>
+            <Card.Body>
+              <Card.Title>Pakistan</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md="3">
+          <Card border="primary" style={{ width: "18rem" }}>
+            <Card.Header>Our County</Card.Header>
+            <Card.Body>
+              <Card.Title>Pakistan</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md="2"></Col>
+      </Row>
+      </Container>
+    </>
+  );
+};
+export default Covid;
