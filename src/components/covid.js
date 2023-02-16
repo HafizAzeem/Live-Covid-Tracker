@@ -5,17 +5,19 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const Covid = () => {
+  const [data, setData]= useState([]);
   const getCovidData = async () => {
     try {
       const res = await fetch("https://data.covid19india.org/data.json");
       const realData = await res.json();
-      console.log(realData.statewise[0]);
+      // console.log();
+      setData(realData.statewise[0])
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
-    // getCovidData()
+    getCovidData()
   }, []);
 
   return (
@@ -37,8 +39,7 @@ const Covid = () => {
             <Card.Body>
               <Card.Title>Pakistan</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+                Pakistan
               </Card.Text>
             </Card.Body>
           </Card>
@@ -49,20 +50,18 @@ const Covid = () => {
             <Card.Body>
               <Card.Title>Pakistan</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+                {data.recovered}
               </Card.Text>
             </Card.Body>
           </Card>
         </Col>
         <Col md="3">
           <Card border="primary" style={{ width: "18rem" }}>
-            <Card.Header>Our County</Card.Header>
+            <Card.Header>Total Confirmed</Card.Header>
             <Card.Body>
               <Card.Title>Pakistan</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+                {data.confirmed}
               </Card.Text>
             </Card.Body>
           </Card>
@@ -74,36 +73,33 @@ const Covid = () => {
         <Col md="2"></Col>
         <Col md="3">
           <Card border="primary" style={{ width: "18rem" }}>
-            <Card.Header>Our County</Card.Header>
+            <Card.Header>Total Deaths</Card.Header>
             <Card.Body>
               <Card.Title>Pakistan</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+                {data.deaths}
               </Card.Text>
             </Card.Body>
           </Card>
         </Col>
         <Col md="3">
           <Card border="primary" style={{ width: "18rem" }}>
-            <Card.Header>Our County</Card.Header>
+            <Card.Header>Total Active</Card.Header>
             <Card.Body>
               <Card.Title>Pakistan</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+                 {data.active}
               </Card.Text>
             </Card.Body>
           </Card>
         </Col>
         <Col md="3">
           <Card border="primary" style={{ width: "18rem" }}>
-            <Card.Header>Our County</Card.Header>
+            <Card.Header>Last Update</Card.Header>
             <Card.Body>
               <Card.Title>Pakistan</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+                {data.lastupdatedtime}
               </Card.Text>
             </Card.Body>
           </Card>
