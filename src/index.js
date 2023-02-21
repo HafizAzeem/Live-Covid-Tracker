@@ -1,16 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM  from "react-dom";
+const azeem= 'Azeem is a web developer '
+ReactDOM.render( 
+        
+        <>
 
-ReactDOM.render(
-        <>    
-           <h1>Netflix Pick</h1>
-           <p>Favirout netflix series</p>
-           <ol>
-                <li>Dark </li>
-                <li>Extra </li>
-                <li>first2 love </li>
-                <li>Robot </li>
-                <li>Holo </li>
-           </ol>
+                <h1> hi {azeem} </h1>
+                <p> Expresion= Operands and expression {4+5} </p>
         </>
-, document.getElementById('root'));
+        ,document.getElementById('root')
+
+);
