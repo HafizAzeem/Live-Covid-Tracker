@@ -1,15 +1,13 @@
-import React from "react";
-import Heading from "./Heading";
-import Para from "./Para";
-import List from "./List";
 
-function App(){
-        return(
-                <>
-                        <Heading/>
-                        <Para/>
-                        <List/>
-                </>
-        )
+const azeem= 'Azeem is a web deveoper '
+
+const office = 'Where is your office '
+
+function good(){
+        var test='Test Developer '
+        return test
 }
-export default App
+
+export default azeem;
+
+export { office, good }
